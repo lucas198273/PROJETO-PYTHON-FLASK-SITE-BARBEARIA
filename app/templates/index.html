@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--cor-marrom); /* Usando a paleta de cores */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            
+        }
+        .logo {
+            width: 110%;
+            max-width: 2000px; /* Ajuste a largura conforme necessário */
+            height: auto;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: var(--cor-destaque); /* Usando a paleta de cores */
+            margin: 10px 0;
+        }
+        p {
+            color: #777;
+            margin: 5px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        strong {
+            color: var(--cor-destaque); /* Usando a paleta de cores */
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+    <title>Produtos à Venda</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ url_for('static', filename='logo_barbearia.jpg') }}" alt="Logo" class="logo img-fluid">
+            <div class="owners">
+                <p>
+                    <strong>Dono 1:</strong> {{dados1.Nome}}<br>
+                    <strong>Contato:</strong> {{dados1.Contato}}
+                </p>
+                <p>
+                    <strong>Dono 2:</strong> {{dados2.Nome}}<br>
+                    <strong>Contato:</strong> {{dados2.Contato}}
+                    
+                <h1>Ola {{nome}}</h1>
+            </div>
+        </div>
+       
+        <h2>Produtos à Venda</h2>
+        <ul>
+            <li><strong>Kit Barbear Clássico:</strong> Inclui navalha, pincel e sabão.</li>
+            <li><strong>Óleo para Barba:</strong> Mantém a barba macia e hidratada.</li>
+            <li><strong>Pomada Modeladora:</strong> Estilo e fixação para o cabelo.</li>
+            <li><strong>Xampu Especial:</strong> Limpeza profunda e aroma refrescante.</li>
+            <!-- Adicione mais produtos conforme necessário -->
+        </ul>
+    </div>
+</body>
+</html>
+{% endblock %}

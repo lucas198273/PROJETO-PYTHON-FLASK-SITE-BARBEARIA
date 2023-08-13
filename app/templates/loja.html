@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <title>CyberTech - Venda de Computadores Futuristas</title>
+    <link rel="stylesheet" href="Style.css">
+    {% block conteudo %}
+    <style>
+        :root {
+            --cor-marrom: #8B4513;
+            --cor-destaque: #FF4500;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--cor-marrom);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 5px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            max-width: 300px;
+            background-color: #1f1c1c;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10%;
+            border: 6px solid var(--cor-destaque);
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            border-radius: 15%;
+            width: 100%;
+            border: 6px solid var(--cor-destaque);
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-top: 10px;
+            color: var(--cor-destaque);
+        }
+
+        .product-description {
+            margin-top: 10px;
+        }
+
+        .product-price {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .product-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--cor-destaque);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10%;
+            transition: background-color 0.3s;
+        }
+
+        .product-button:hover {
+            background-color: #FF5722;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <header>
+        <h1>Bem-vindo à Minha Loja Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Carrinho</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-container">
+            <!-- Coloque aqui seus produtos -->
+            <div class="product-item">
+                <img class="product-image" src="produto1.jpg" alt="Produto 1">
+                <h2 class="product-title">Computador Futurista 2000</h2>
+                <p class="product-description">Desempenho incrível para todas as tarefas futurísticas.</p>
+                <p class="product-price">$1999.99</p>
+                <a href="#" class="product-button">Adicionar ao Carrinho</a>
+            </div>
+            
+            <div class="product-item">
+                <img class="product-image" src="produto2.jpg" alt="Produto 2">
+                <h2 class="product-title">Notebook UltraSlim X10</h2>
+                <p class="product-description">Portabilidade e elegância sem igual.</p>
+                <p class="product-price">$1499.99</p>
+                <a href="#" class="product-button">Adicionar ao Carrinho</a>
+            </div>
+            
+            <div class="product-item">
+                <img class="product-image" src="produto3.jpg" alt="Produto 3">
+                <h2 class="product-title">Mouse Óptico Holográfico</h2>
+                <p class="product-description">Navegação precisa com estilo futurista.</p>
+                <p class="product-price">$49.99</p>
+                <a href="#" class="product-button">Adicionar ao Carrinho</a>
+            </div>
+            
+            <!-- Adicione mais produtos conforme necessário -->
+        </div>
+    </div>
+    
+    
+    
+</body>
+{% endblock %}
+
+</html>
+

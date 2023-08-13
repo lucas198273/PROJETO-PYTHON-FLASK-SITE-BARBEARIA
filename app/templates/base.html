@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Título Aqui</title>
+    <style>
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 5px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Página Inicial</a></li>
+            <li><a href="/loja">Loja Virtual</a></li>
+            <li><a href="#">Carrinho</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block conteudo %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>Projeto desenvolvido por Lucas Pereira Dias</p>
+    </footer>
+</body>
+</html>

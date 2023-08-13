@@ -1,56 +1,40 @@
-from app import app  # app onde intanciamos o objeto flask
+from app import app
+from flask import render_template
+from flask import request
+from flask import flash # para trabalhar com preenchimento de formulario 
+                            # Respostas rapidas de interação
+                            # Sera nessesario definir configuração 
+                            
+from flask import redirect # redireciona para uma pagina html
 
-# rota inicial , para onde o codigo sera enviado
-@app.route('/')  #ENDEREÇO PADRAO DE SERVIDOR LOCAL
-@app.route('/index') # ROTA ALTERNATIVA CASO O USUARIO DIGITE O NOME DO SITE \INDEX
+@app.route('/')
 def index():
-    nome = "Lucas  dias"
-    return '''
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo ao Blog</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #f44336;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #333;
-        }
-        strong {
-            color: #388e3c;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Bem-vindo ao Nosso Blog</h1>
-        <p>Olá, prezado(a) visitante!</p>
-        <p>Esperamos que você desfrute de nosso conteúdo.</p>
-        <p>Fique à vontade para explorar e interagir conosco.</p>
-        <p>Seu nome: <strong>{{ nome }}</strong></p>
-    </div>
-</body>
-</html>
+    dados1 = {"Nome": "JP Barber", "Contato": "31992311011"}
+    dados2 = {"Nome": "Carlos Andrade", "Contato": "31992311011"}
+    return render_template('index.html', dados1=dados1, dados2=dados2, )
 
-'''
+@app.route('/loja')
+def loja():
+    return render_template('loja.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/autenticar', methods=['POST'])
+def autenticar():
+    usuario = request.form.get('usuario')
+    senha = request.form.get('senha')
+
+    if usuario == "lucas" and senha == "123":
+        
+        return redirect ('/loja') 
+        
+        
+    else: 
+        flash(" Dados invalidos") # Menssagem rapida
+        flash(" login ou senha  invalidos") # Menssagem rapida
+        return redirect ('/login')
+    
+if __name__ == '__main__':
+    app.run(debug=True)
